@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextTicket: Ticket Management App
 
-## Getting Started
+This is a Ticket Management application built using Next.js and ShadCN UI. It utilizes React SimpleMDE (EasyMDE) Markdown Editor for creating and editing ticket descriptions. The app allows users to manage ticket issues by creating, browsing, editing, and deleting tickets.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies](#technologies)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Creating a Ticket
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Click on the "Create Ticket" button.
+2. Fill in the ticket title, description (using Markdown), and select the status and priority.
+3. Click "Submit" to create the ticket.
 
-## Learn More
+### Browsing Tickets
 
-To learn more about Next.js, take a look at the following resources:
+- The home page displays a list of all tickets with their titles, descriptions, status, and priority.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Editing a Ticket
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Click on the ticket you want to edit.
+2. Modify the ticket details as needed.
+3. Click "Save" to update the ticket.
 
-## Deploy on Vercel
+### Deleting a Ticket
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Click on the ticket you want to delete.
+2. Click the "Delete" button to remove the ticket.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Features
+
+- **Create Tickets:** Add new tickets with a title, description, status, and priority.
+- **Browse Tickets:** View a list of all tickets.
+- **Edit Tickets:** Modify the details of existing tickets.
+- **Delete Tickets:** Remove tickets from the system.
+- **Markdown Support:** Use Markdown to format ticket descriptions.
+
+## Technologies
+
+- **Next.js:** A React framework for building fast, user-friendly web applications.
+- **ShadCN UI:** A UI component library for building elegant and customizable user interfaces.
+- **React SimpleMDE (EasyMDE):** A Markdown editor for writing and editing ticket descriptions.
+- **Prisma:** An ORM for database management.

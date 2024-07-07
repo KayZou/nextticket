@@ -17,13 +17,12 @@ export async function PATCH(req: NextRequest, { params }: Props) {
       id: parseInt(params.id),
     },
   });
-  if(!ticket){
-    return NextResponse.json({message:"Ticket not found"},{status:404})
+  if (!ticket) {
+    return NextResponse.json({ message: "Ticket not found" }, { status: 404 });
   }
   const ticketUpdated = await prisma.ticket.update({
     where: {
-    //   id: parseInt(params.id),
-    id: ticket.id
+      id: ticket.id,
     },
     data: {
       ...body,
