@@ -14,6 +14,7 @@ import TicketPriority from "@/components/TicketPriority";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
+import DeleteButton from "./DeleteButton";
 
 interface Props {
   ticket: Ticket;
@@ -48,7 +49,7 @@ export default function TicketDetail({ ticket }: Props) {
           })}
         </CardFooter>
       </Card>
-      <div className="mx-4 flex lg:flex-col lg:mx-0 gap-2">
+      <div className="mx-4 flex lg:flex-col lg:mx-0 gap-2  justify-center items-center">
         <Link
           href={`/tickets/edit/${ticket.id}`}
           className={`${buttonVariants({ variant: "default" })}`}
@@ -56,15 +57,7 @@ export default function TicketDetail({ ticket }: Props) {
           <Pencil className="mr-2 h-4 w-4" size={22} />
           Edit Ticket
         </Link>
-        <Link
-          href={`/tickets/edit/${ticket.id}`}
-          className={`${buttonVariants({
-            variant: "default",
-          })} bg-red-500 hover:bg-red-400`}
-        >
-          <Trash2 className="mr-2 h-4 w-4 " size={22} />
-          Delete Ticket
-        </Link>
+        <DeleteButton ticketId={ticket.id} />
       </div>
     </div>
   );

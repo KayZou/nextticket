@@ -47,6 +47,7 @@ export default function TicketForm({ ticket }: Props) {
       }
       setIsSubmitting(false);
       router.push("/tickets");
+      router.refresh();
     } catch (error) {
       console.log(error);
       setError(error.message || error);

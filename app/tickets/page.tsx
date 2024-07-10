@@ -6,7 +6,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { Tags } from "lucide-react";
 
 export default async function Tickets() {
-  const tickets = await prisma.ticket.findMany();
+  const tickets = await prisma.ticket.findMany({
+    orderBy: { createdAt: "desc" },
+  });
   return (
     <div>
       <Link
