@@ -6,11 +6,12 @@ import { buttonVariants } from "@/components/ui/button";
 import { Tags } from "lucide-react";
 import Pagination from "@/components/Pagination";
 import StatusFilter from "@/components/StatusFilter";
-import { Status } from "@prisma/client";
+import { Status, Ticket } from "@prisma/client";
 
-interface SearchParams {
+export interface SearchParams {
   page: string;
   status: string;
+  orderBy: keyof Ticket;
 }
 
 export default async function Tickets({
@@ -21,6 +22,8 @@ export default async function Tickets({
   const pageSize = 10;
 
   const page = parseInt(searchParams.page) || 1;
+
+  const orderBy = searchParams.orderBy ? searchParams.orderBy : "createdAt";
 
   const statuses = Object.values(Status);
 
@@ -41,10 +44,12 @@ export default async function Tickets({
   const ticketCount = await prisma.ticket.count({ where });
 
   const tickets = await prisma.ticket.findMany({
-    orderBy: { createdAt: "desc" },
+    where,
+    orderBy: {
+      [orderBy]: "desc",
+    },
     take: pageSize,
     skip: (page - 1) * pageSize,
-    where,
   });
 
   return (
@@ -59,7 +64,7 @@ export default async function Tickets({
       <div className="my-3">
         <StatusFilter />
       </div>
-      <TicketsTable tickets={tickets} />
+      <TicketsTable tickets={tickets} searchParams={searchParams} />
       <Pagination
         itemCount={ticketCount}
         pageSize={pageSize}
