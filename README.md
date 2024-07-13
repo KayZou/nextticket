@@ -44,4 +44,5 @@ This is a Ticket Management application built using Next.js and ShadCN UI. It ut
 - **Next.js:** A React framework for building fast, user-friendly web applications.
 - **ShadCN UI:** A UI component library for building elegant and customizable user interfaces.
 - **React SimpleMDE (EasyMDE):** A Markdown editor for writing and editing ticket descriptions.
+- **React-markdown:** A Markdown reader react library for translating from markdown to plain text. 
 - **Prisma:** An ORM for database management.
