@@ -39,10 +39,10 @@ export default function DeleteButton({ ticketId }: Props) {
   }
 
   return (
-    <div className="">
+    <div>
       <AlertDialog>
         <AlertDialogTrigger
-          className={buttonVariants({ variant: "destructive" })}
+          className={`${buttonVariants({ variant: "destructive" })} w-full`}
           disabled={deleting}
         >
           <Trash2 className="mr-2 h-4 w-4" size={22} />

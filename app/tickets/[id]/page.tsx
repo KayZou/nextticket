@@ -13,7 +13,9 @@ export default async function TicketPage({ params }: Props) {
     },
   });
 
+  const users = await prisma.user.findMany()
+
   if (!ticket) return <p className="text-destructive">Ticket not found</p>;
 
-  return <TicketDetail ticket={ticket} />;
+  return <TicketDetail ticket={ticket} users={users}/>;
 }
