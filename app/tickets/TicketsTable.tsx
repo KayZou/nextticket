@@ -26,7 +26,7 @@ export default function TicketsTable({ tickets, searchParams }: Props) {
       <div className="rounded-md sm:border items-center">
         <Table>
           <TableHeader>
-            <TableRow>
+            <TableRow className="bg-secondary hover:bg-secondary/80">
               <TableHead>
                 <Link href={{ query: { ...searchParams, orderBy: "title" } }}>
                   Title
