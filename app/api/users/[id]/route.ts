@@ -20,7 +20,7 @@ export async function PATCH(req: NextRequest, { params }: Props) {
     });
 
     if (!user)
-      return NextResponse.json({ message: "User not found" }, { status: 404 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
 
     if (body?.password && body.password != "") {
       const hashedPassword = await bcrypt.hash(body.password, 10);
@@ -34,7 +34,7 @@ export async function PATCH(req: NextRequest, { params }: Props) {
       });
       if (duplicateUsername)
         return NextResponse.json(
-          { message: "Username must be unique" },
+          { error: "Username must be unique" },
           { status: 409 }
         );
     }

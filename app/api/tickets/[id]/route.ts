@@ -18,7 +18,7 @@ export async function PATCH(req: NextRequest, { params }: Props) {
     },
   });
   if (!ticket) {
-    return NextResponse.json({ message: "Ticket not found" }, { status: 404 });
+    return NextResponse.json({ error: "Ticket not found" }, { status: 404 });
   }
   if (body.assignedToUserId) {
     body.assignedToUserId = parseInt(body.assignedToUserId);
@@ -41,7 +41,7 @@ export async function DELETE(req: NextRequest, { params }: Props) {
     });
     if (!ticket)
       return NextResponse.json(
-        { message: "Ticket not found" },
+        { error: "Ticket not found" },
         { status: 404 }
       );
     await prisma.ticket.delete({
