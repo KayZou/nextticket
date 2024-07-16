@@ -46,3 +46,8 @@ This is a Ticket Management application built using Next.js and ShadCN UI. It ut
 - **React SimpleMDE (EasyMDE):** A Markdown editor for writing and editing ticket descriptions.
 - **React-markdown:** A Markdown reader react library for translating from markdown to plain text. 
 - **Prisma:** An ORM for database management.
+
+## **ToDo next**:
+- secure the full crud on users / tickets!
+- add more providers into next-auth
+- protect pages
