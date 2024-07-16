@@ -3,8 +3,14 @@ import React from "react";
 import ToggleMode from "./ToggleMode";
 import MainNavLinks from "./MainNavLinks";
 import { Tag } from "lucide-react";
+import { getServerSession } from "next-auth";
+import options from "@/app/api/auth/[...nextauth]/options";
 
-export default function MainNav() {
+export default async function MainNav() {
+  const session = await getServerSession(options);
+
+  console.log(session);
+
   return (
     <div className="flex justify-between items-center">
       <div className=" bg-blue-600/80 rounded-md py-1 px-2">
@@ -15,7 +21,12 @@ export default function MainNav() {
       </div>
       <MainNavLinks />
       <div className="flex items-center gap-2">
-        <Link href={"/logout"}>Logout</Link>
+        {session ? (
+          <Link href={"/api/auth/signout?callbackUrl=/"}>Logout</Link>
+        ) : (
+          <Link href={"/api/auth/signin"}>Login</Link>
+        )}
+
         <ToggleMode />
       </div>
     </div>
