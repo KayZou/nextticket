@@ -51,3 +51,5 @@ This is a Ticket Management application built using Next.js and ShadCN UI. It ut
 - secure the full crud on users / tickets!
 - add more providers into next-auth
 - protect pages
+- correct the spelling
+- play more with the dashboard
