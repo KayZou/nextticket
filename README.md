@@ -53,3 +53,6 @@ This is a Ticket Management application built using Next.js and ShadCN UI. It ut
 - protect pages
 - correct the spelling
 - play more with the dashboard
+
+## Deployment:
+- Vercel: https://next-ticket-o5yb2n4lq-kayzous-projects.vercel.app/
