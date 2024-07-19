@@ -25,9 +25,19 @@ export default async function Tickets({
 
   const orderBy = searchParams.orderBy ? searchParams.orderBy : "createdAt";
 
-  const statuses = Object.values(Status);
+  // const statuses = Object.values(Status);
 
-  const status = statuses.includes(searchParams.status)
+  const statuses: Array<"OPEN" | "STARTED" | "CLOSED"> = [
+    "OPEN",
+    "STARTED",
+    "CLOSED",
+  ];
+
+  function isValidStatus(status: any): status is "OPEN" | "STARTED" | "CLOSED" {
+    return statuses.includes(status);
+  }
+
+  const status = isValidStatus(searchParams.status)
     ? searchParams.status
     : undefined;
 
