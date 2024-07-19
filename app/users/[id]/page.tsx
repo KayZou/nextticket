@@ -18,7 +18,7 @@ export default async function EditUser({ params }: Props) {
     where: { id: parseInt(params.id) },
   });
 
-  user.password = "";
+  if (user) return (user.password = "");
 
   if (!user)
     return <p className="text-center text-destructive">User not found.</p>;
