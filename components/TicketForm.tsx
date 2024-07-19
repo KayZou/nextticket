@@ -50,7 +50,7 @@ export default function TicketForm({ ticket }: Props) {
       router.refresh();
     } catch (error) {
       console.log(error);
-      setError(error.message || error);
+      setError("Can't submit for some reason");
       setIsSubmitting(false);
     }
   }

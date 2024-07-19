@@ -47,7 +47,6 @@ export default function UserForm({ user }: Props) {
       router.push("/tickets");
       router.refresh();
     } catch (error) {
-      console.log(error.message);
       setError("An error occurred");
       setIsSubmitting(false);
     }

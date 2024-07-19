@@ -33,8 +33,8 @@ export default function AssignTicket({
         });
       setIsAssigning(false);
     } catch (error) {
-      console.log(error.message);
-      setError(error.message);
+      console.log(error);
+      setError("Something bad happened");
     }
   }
 
