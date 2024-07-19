@@ -47,6 +47,6 @@ export async function PATCH(req: NextRequest, { params }: Props) {
     return NextResponse.json(updatedUser);
   } catch (error) {
     console.log(error);
-    return NextResponse.json(error.message, { status: 500 });
+    return NextResponse.json(error, { status: 500 });
   }
 }

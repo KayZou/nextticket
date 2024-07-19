@@ -32,7 +32,7 @@ export default function DeleteButton({ ticketId }: Props) {
       router.push("/tickets");
       router.refresh();
     } catch (error) {
-      setError(error.message || error);
+      setError("Something bad happened");
       setDeleting(false);
       console.log(error);
     }
@@ -68,9 +68,7 @@ export default function DeleteButton({ ticketId }: Props) {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-      {error && (
-        <p className="text-destructive text-center">{error.message || error}</p>
-      )}
+      {error && <p className="text-destructive text-center">{error}</p>}
     </div>
   );
 }
